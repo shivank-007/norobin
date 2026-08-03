@@ -1,26 +1,67 @@
-@import "tailwindcss";
+:root{
+  --background:#070B11;
+  --surface:#0D131D;
+  --surface-2:#121A25;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --border:rgba(255,255,255,.08);
+
+  --text:#F7FAFC;
+  --text-2:#A7B3C4;
+
+  --primary:#18E3FF;
+  --primary-hover:#49ECFF;
+
+  --success:#3DDC97;
+
+  --radius:18px;
+
+  --container:1280px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html{
+  scroll-behavior:smooth;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+body{
+  background:var(--background);
+  color:var(--text);
+  font-family:Inter,sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font:inherit;
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+
+    linear-gradient(rgba(255,255,255,.02) 1px, transparent 1px),
+
+    linear-gradient(90deg, rgba(255,255,255,.02) 1px, transparent 1px);
+
+    background-size:80px 80px;
+
+    pointer-events:none;
+
+    z-index:-2;
+
 }
