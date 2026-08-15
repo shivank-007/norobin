@@ -1,0 +1,372 @@
+﻿.card {
+  position: relative;
+  overflow: hidden;
+
+  background: #101714;
+
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 22px;
+
+  padding: 30px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* =========================
+   AMBIENT MINT GLOW
+========================= */
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  width: 260px;
+  height: 260px;
+
+  top: -140px;
+  right: -100px;
+
+  border-radius: 50%;
+
+  background: rgba(21, 215, 168, 0.09);
+
+  filter: blur(70px);
+
+  opacity: 0;
+
+  transition: opacity 0.4s ease;
+
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+
+  background: #111b18;
+
+  border-color: rgba(21, 215, 168, 0.32);
+
+  box-shadow:
+    0 24px 70px rgba(0, 0, 0, 0.42),
+    0 0 45px rgba(21, 215, 168, 0.055);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* =========================
+   FEATURED EMPLOYEE
+========================= */
+
+.featured {
+  min-height: 0;
+  height: 100%;
+}
+
+/* =========================
+   ONLINE STATUS
+========================= */
+
+.status {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #8fa19b;
+
+  font-size: 13px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #15d7a8;
+
+  box-shadow:
+    0 0 0 0 rgba(21, 215, 168, 0.4);
+
+  animation: onlinePulse 2s ease-out infinite;
+}
+
+@keyframes onlinePulse {
+  0% {
+    box-shadow:
+      0 0 0 0 rgba(21, 215, 168, 0.4);
+  }
+
+  70% {
+    box-shadow:
+      0 0 0 7px rgba(21, 215, 168, 0);
+  }
+
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(21, 215, 168, 0);
+  }
+}
+
+/* =========================
+   ICON
+========================= */
+
+.icon {
+  position: relative;
+  z-index: 1;
+
+  width: 58px;
+  height: 58px;
+
+  border-radius: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(21, 215, 168, 0.075);
+
+  border: 1px solid rgba(21, 215, 168, 0.13);
+
+  color: #15d7a8;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.card:hover .icon {
+  transform: scale(1.05);
+
+  background: rgba(21, 215, 168, 0.13);
+
+  border-color: rgba(21, 215, 168, 0.28);
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.card h3 {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: #f4f7f5;
+
+  font-size: 28px;
+  line-height: 1.15;
+
+  letter-spacing: -0.03em;
+}
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.card p {
+  position: relative;
+  z-index: 1;
+
+  margin: 0;
+
+  color: #8fa19b;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+}
+
+/* =========================
+   SKILLS
+========================= */
+
+.skills {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #e5ece8;
+
+  font-size: 14px;
+}
+
+.skill::first-letter {
+  color: #15d7a8;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.button {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+
+  margin-top: auto;
+
+  border: 1px solid rgba(21, 215, 168, 0.15);
+
+  background: #15d7a8;
+
+  color: #06110e;
+
+  border-radius: 12px;
+
+  padding: 14px 18px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 10px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 700;
+
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+
+  background: #20e4b2;
+
+  box-shadow:
+    0 10px 30px rgba(21, 215, 168, 0.16);
+}
+
+/* Button arrow */
+
+.button span:last-child {
+  transition: transform 0.25s ease;
+}
+
+.button:hover span:last-child {
+  transform: translateX(4px);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 992px) {
+  .card {
+    padding: 28px;
+  }
+
+  .featured {
+    min-height: 460px;
+  }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .card {
+    padding: 26px;
+
+    border-radius: 20px;
+  }
+
+  .featured {
+    min-height: 430px;
+  }
+
+  .card h3 {
+    font-size: 25px;
+  }
+
+  .card p {
+    font-size: 15px;
+  }
+}
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 480px) {
+  .card {
+    padding: 22px;
+
+    border-radius: 18px;
+  }
+
+  .featured {
+    min-height: 400px;
+  }
+
+  .icon {
+    width: 54px;
+    height: 54px;
+  }
+
+  .card h3 {
+    font-size: 23px;
+  }
+
+  .skill {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 13px 16px;
+  }
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::before,
+  .icon,
+  .button,
+  .button span:last-child {
+    transition: none;
+  }
+
+  .dot {
+    animation: none;
+  }
+}
+

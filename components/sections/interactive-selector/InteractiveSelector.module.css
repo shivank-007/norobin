@@ -1,0 +1,326 @@
+.section {
+  padding: 100px 0;
+  background: var(--background);
+  color: var(--text);
+}
+
+.container {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.desc {
+  font-size: 1.125rem;
+  color: var(--text-2);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.rightCol {
+  display: flex;
+  justify-content: center;
+}
+
+.selectorCard {
+  background: #0a0a0a;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardHeaderRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px 16px;
+}
+
+.cardHeaderRow h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.recLabel {
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.cardBody {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 32px;
+  padding: 0 32px 32px;
+}
+
+.tagsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-content: flex-start;
+}
+
+.tag {
+  background: #111;
+  border: 1px solid var(--border);
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag:hover {
+  border-color: var(--text-3);
+  color: var(--text);
+}
+
+.tagActive {
+  border-color: var(--primary);
+  color: var(--primary);
+  background: rgba(19, 214, 163, 0.05);
+}
+
+.tagCheck {
+  color: var(--primary);
+}
+
+.recommendationBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.recAvatarsRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.recAvatarPile {
+  display: flex;
+}
+
+.pileImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+  border: 2px solid #0a0a0a;
+  margin-left: -12px;
+}
+
+.pileImg:first-child {
+  margin-left: 0;
+}
+
+.arrowIcon {
+  color: var(--primary);
+  font-size: 18px;
+  margin: 0 4px;
+}
+
+.employeeCount {
+  background: rgba(19, 214, 163, 0.1);
+  color: var(--primary);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.recSubtext {
+  margin: 0;
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+.primaryBtn {
+  background: var(--primary);
+  color: #000;
+  border: none;
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.primaryBtn:hover {
+  background: var(--primary-hover);
+}
+
+.scheduleLink {
+  color: var(--text-2);
+  font-size: 13px;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.scheduleLink:hover {
+  color: var(--text);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .cardBody {
+    grid-template-columns: 1fr;
+  }
+  .activeActions {
+    flex-direction: column;
+  }
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+.deployContainer {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 100%;
+  grid-column: 1 / -1;
+}
+.deployHeader {
+  margin: 0;
+  font-size: 20px;
+  color: var(--text);
+}
+.stepList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-3);
+  font-size: 15px;
+}
+.stepItem.completed {
+  color: var(--primary);
+}
+.stepItem.active {
+  color: var(--text);
+  font-weight: 500;
+}
+.activeContainer {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
+  grid-column: 1 / -1;
+}
+.activeHeader h4 {
+  color: var(--primary);
+  margin: 0 0 8px 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.activeHeader h2 {
+  font-size: 28px;
+  margin: 0;
+}
+.activeProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: #111;
+  padding: 24px;
+  border-radius: 12px;
+  width: 100%;
+  border: 1px solid var(--border);
+}
+.activeAvatar {
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  margin-bottom: 8px;
+}
+.activeAutomations {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 12px;
+}
+.activeActions {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+}
+.secondaryBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.secondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.05);
+}

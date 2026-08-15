@@ -1,0 +1,79 @@
+.section {
+  padding: 100px 0;
+  background: var(--background);
+  color: var(--text);
+}
+
+.container {
+  width: min(1000px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+}
+
+.header {
+  text-align: center;
+}
+
+.header h2 {
+  font-size: 3rem;
+  font-weight: 600;
+  margin: 0 0 16px;
+  letter-spacing: -0.04em;
+}
+
+.header p {
+  color: var(--text-2);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  width: 100%;
+}
+
+.toolCard {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.toolCard:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  background: var(--surface-3);
+}
+
+.iconWrapper {
+  color: var(--text);
+  opacity: 0.8;
+}
+
+.toolCard span {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-2);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

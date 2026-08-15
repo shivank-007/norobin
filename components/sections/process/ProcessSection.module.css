@@ -1,0 +1,130 @@
+.section {
+  padding: 100px 0;
+  background: var(--background);
+  color: var(--text);
+}
+
+.container {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 60px;
+}
+
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.eyebrow {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+}
+
+.rightCol {
+  display: flex;
+  align-items: center;
+}
+
+.stepsContainer {
+  display: flex;
+  width: 100%;
+}
+
+.step {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+  position: relative;
+}
+
+.step:hover, .activeStep {
+  opacity: 1;
+}
+
+.stepHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  color: var(--text-2);
+  font-weight: 600;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.activeCircle, .step:hover .circle {
+  background: rgba(19, 214, 163, 0.1);
+  border-color: var(--primary);
+  color: var(--primary);
+  box-shadow: 0 0 15px rgba(19, 214, 163, 0.2);
+}
+
+.line {
+  width: 1px;
+  flex-grow: 1;
+  background: var(--border);
+  margin: 16px 0;
+  transition: all 0.3s ease;
+}
+
+.activeLine, .step:hover .line {
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+.stepContent h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  color: var(--text);
+}
+
+.stepContent p {
+  font-size: 0.9rem;
+  color: var(--text-2);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    grid-template-columns: 1fr;
+  }
+  
+  .stepsContainer {
+    flex-direction: column;
+    gap: 32px;
+  }
+  
+  .line {
+    display: none;
+  }
+}

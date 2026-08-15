@@ -1,4 +1,4 @@
-export default function Logo() {
+﻿export default function Logo() {
   return (
     <div
       style={{
@@ -34,3 +34,4 @@ export default function Logo() {
     </div>
   );
 }
+

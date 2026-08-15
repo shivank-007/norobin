@@ -1,0 +1,170 @@
+.footer {
+  background: var(--background);
+  color: var(--text);
+  border-top: 1px solid var(--border);
+  padding: 80px 0 24px;
+}
+
+.container {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.footerMain {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 60px;
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.logoMark {
+  color: var(--primary);
+  font-size: 1.5rem;
+}
+
+.tagline {
+  color: var(--text-2);
+  line-height: 1.5;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.socials {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  color: var(--text-2);
+  transition: all 0.2s ease;
+}
+
+.socials a:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
+.linksCol {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.linkGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.kicker {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin-bottom: 8px;
+}
+
+.linkGroup a {
+  color: var(--text-2);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.linkGroup a:hover {
+  color: var(--text);
+}
+
+.ctaCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.ctaText {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+}
+
+.ctaSubtext {
+  color: var(--text-2);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.ctaBtn {
+  background: var(--primary);
+  color: #000;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.ctaBtn:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+}
+
+.footerBottom {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  color: var(--text-3);
+  font-size: 0.85rem;
+}
+
+.footerBottom p {
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .footerMain {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .linksCol {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    gap: 48px;
+  }
+}

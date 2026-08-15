@@ -1,39 +1,27 @@
 import styles from "./Trusted.module.css";
 
+const logos = [
+  "Acme Corp",
+  "Quantum",
+  "Echo",
+  "Celestia",
+  "Pulse",
+  "Nexus"
+];
+
 export default function Trusted() {
   return (
-    <section className={styles.trusted}>
-
+    <section className={styles.section} aria-label="Trusted by innovative teams">
       <div className={styles.container}>
-
-        <div className={styles.stat}>
-          <h2>48,200+</h2>
-          <p>AI Conversations</p>
+        <p className={styles.heading}>Trusted by innovative teams</p>
+        <div className={styles.logoGrid}>
+          {logos.map((logo) => (
+            <div key={logo} className={styles.logoWrapper}>
+              <span className={styles.logoText}>{logo}</span>
+            </div>
+          ))}
         </div>
-
-        <div className={styles.divider}></div>
-
-        <div className={styles.stat}>
-          <h2>3,280+</h2>
-          <p>Meetings Booked</p>
-        </div>
-
-        <div className={styles.divider}></div>
-
-        <div className={styles.stat}>
-          <h2>24/7</h2>
-          <p>Automation Running</p>
-        </div>
-
-        <div className={styles.divider}></div>
-
-        <div className={styles.stat}>
-          <h2>98%</h2>
-          <p>Customer Satisfaction</p>
-        </div>
-
       </div>
-
     </section>
   );
 }

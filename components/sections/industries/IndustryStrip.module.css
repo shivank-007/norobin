@@ -1,0 +1,182 @@
+.section {
+  width: 100%;
+  padding: 40px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--background);
+  position: relative;
+}
+
+.container {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label span {
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.label strong {
+  color: var(--primary);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+}
+
+.divider {
+  width: 1px;
+  height: 48px;
+  background: var(--border);
+}
+
+.grid {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--text-2);
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.item:hover {
+  color: var(--text);
+}
+
+.item:hover .iconWrapper {
+  background: var(--surface-3);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.activeItem {
+  color: var(--text);
+}
+.activeItem .iconWrapper {
+  background: var(--primary);
+  border-color: var(--primary);
+  color: #000;
+  box-shadow: 0 0 15px var(--primary-glow);
+}
+
+.iconWrapper {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-2);
+  transition: all 0.2s ease;
+}
+
+.item span {
+  color: var(--text);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.moreLabel {
+  color: var(--text-3);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.industryDetails {
+  margin-top: 32px;
+  display: flex;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.detailsContent {
+  background: var(--surface-2);
+  border: 1px solid var(--primary);
+  border-radius: 16px;
+  padding: 24px;
+  text-align: center;
+  max-width: 500px;
+  box-shadow: 0 8px 30px rgba(19, 214, 163, 0.1);
+}
+
+.detailsContent h4 {
+  margin: 0 0 8px 0;
+  color: var(--primary);
+}
+
+.detailsContent p {
+  margin: 0 0 16px 0;
+  color: var(--text-2);
+}
+
+.empRec {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: var(--surface);
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+}
+
+.empRec div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.empRec div strong {
+  font-size: 14px;
+}
+.empRec div span {
+  font-size: 12px;
+  color: var(--text-3);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .grid {
+    flex-wrap: wrap;
+    gap: 32px;
+    justify-content: center;
+  }
+
+  .divider {
+    display: none;
+  }
+}
